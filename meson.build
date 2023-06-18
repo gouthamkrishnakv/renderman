@@ -12,7 +12,7 @@ subdir('src')
 
 deps = [
   # OpenGL
-  dependency('gl'),
+  dependency('gl', required: true),
 	# GLFW3 Dependency. Enable install, and affix version.
   dependency('glfw3', version: '3.3.8' , required: true, default_options: ['install=true'])
 ]
