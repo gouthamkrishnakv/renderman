@@ -1,0 +1,5 @@
+# Gitignores for Subproject Sources
+# Make sure packagecache isn't added
+packagecache/
+# Remove GLFW sources from
+glfw-*/

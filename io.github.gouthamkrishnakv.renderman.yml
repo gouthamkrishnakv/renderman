@@ -1,0 +1,25 @@
+id: io.github.gouthamkrishnakv.renderman
+runtime: org.gnome.Platform
+runtime-version: "44"
+sdk: org.gnome.Sdk
+command: renderman
+
+finish-args:
+  # Enable network sometime later on, if even required
+  # - --share=network
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --device=dri
+
+modules:
+  # Build the meson file which compiles from this directory
+  - name: renderman
+    buildsystem: meson
+    config-opts:
+      - -Dbuildtype=release
+      # - -Dprefix=/app
+      - -Dlibdir=lib
+      - -Dbindir=bin
+    sources:
+      - type: git
+        url: "."
