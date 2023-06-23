@@ -1,11 +1,16 @@
+#include <GL/glew.h>
+#include <GL/glut.h>
 #include <GLFW/glfw3.h>
 
-int main(void)
+int main(int argc, char* argv[])
 {
     GLFWwindow* window;
 
     /* Initialize the library */
     if (!glfwInit())
+        return -1;
+
+    if (!glewInit(argc, argv))
         return -1;
 
     /* Create a windowed mode window and its OpenGL context */
@@ -24,7 +29,7 @@ int main(void)
     {
         /* Render here */
         glClear(GL_COLOR_BUFFER_BIT);
-        
+
         glBegin(GL_TRIANGLES);
         
         glVertex2f(-0.5f, -0.5f);

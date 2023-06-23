@@ -13,8 +13,11 @@ subdir('src')
 deps = [
   # OpenGL
   dependency('gl', required: true),
+  dependency('glut', required: true),
 	# GLFW3 Dependency. Enable install, and affix version.
-  dependency('glfw3', version: '3.3.8' , required: true, default_options: ['install=true'])
+  dependency('glfw3', version: '3.3.8' , required: true, default_options: ['install=true']),
+  # GLEW (GL Extension Wrangler)
+  dependency('glew', static: true),
 ]
 
 exe = executable(

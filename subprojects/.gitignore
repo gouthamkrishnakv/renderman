@@ -3,3 +3,5 @@
 packagecache/
 # GLFW Dependency
 glfw-*/
+# GLEW Dependency
+glew-*/

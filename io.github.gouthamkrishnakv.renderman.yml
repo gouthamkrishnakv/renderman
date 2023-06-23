@@ -6,12 +6,32 @@ command: renderman
 
 finish-args:
   # Enable network sometime later on, if even required
-  # - --share=network
+  - --share=network
   - --socket=wayland
   - --socket=fallback-x11
   - --device=dri
 
+# Enable network in build-config if required
+build-options:
+  build-args:
+    - --share=network
+
 modules:
+  # Add the URL for Freedesktop glu here
+  # - name: freeglut
+  #   buildsystem: cmake
+  #   sources:
+  #   - type: archive
+  #     url: https://github.com/FreeGLUTProject/freeglut/releases/download/v3.4.0/freeglut-3.4.0.tar.gz
+  #     sha256: 3c0bcb915d9b180a97edaebd011b7a1de54583a838644dcd42bb0ea0c6f3eaec
+
+  # - name: freeglut
+  #   buildsystem: cmake
+  #   sources:
+  #     - type: archive
+  #       url: https://github.com/FreeGLUTProject/freeglut/releases/download/v3.4.0/freeglut-3.4.0.tar.gz
+  #       sha256: 3c0bcb915d9b180a97edaebd011b7a1de54583a838644dcd42bb0ea0c6f3eaec
+
   # Build the meson file which compiles from this directory
   - name: renderman
     buildsystem: meson
